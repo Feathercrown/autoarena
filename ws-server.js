@@ -73,7 +73,10 @@ function recieveMessage(clientId, client, msgType, data){
         case "init1":
             client.data = data;
             client.data.teamNumber = server.clients.size;
-            client.reply("init2",client.data.teamNumber);
+            client.reply("init2",{teamNumber:client.data.teamNumber,mapData:config.game});
+            break;
+        case "init3":
+            console.log(`Client ${clientId} fully configured and connected to server`);
             break;
         default:
             console.log("Invalid message type recieved");

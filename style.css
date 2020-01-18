@@ -31,7 +31,7 @@ body {
     height: 50%;
     background-color: rgb(16, 167, 255);
     display: flex;
-    align-items: stretch; //You can make a custom order (123 --> 132), they can reverse, they can go vertical, they can stretch and squash and squish and  f l e x,  and it's easy to change any of those properties for mobile/smolscreens and I believe they're all animateable as well
+    align-items: stretch;
 }
 
 #bottomPanel > div {
