@@ -7,7 +7,15 @@
 
 var config = {
     serverUrl: "ws://localhost:80", //TODO: Make this configurable for the end user via in-app text input
-    mapSize: 33 //TODO: Make this get map size from server instead of defining it here in client
+    client: {
+        name: "Default Dave",
+        color: "#FF0000",
+        teamNumber: -1
+    },
+    game: {
+        //Defaults, overwritten by server during init phase
+        mapSize: 33
+    }
 };
 
 // Initialization
@@ -20,13 +28,10 @@ var game = {
         board: (()=>{new Array(config.mapSize).fill(new Array(config.mapSize).fill(new Tile()))})(), // Create a 2d array based on config value
         scores: [0,0,0,0] // Rudimentary defaults
     },
-    send: function(msgType, data){
-        socket.send(JSON.stringify({type:msgType, data:data}));
+    send: function(msgType, msgData){
+        socket.send(JSON.stringify({type:msgType,data:msgData}));
     },
-    recieve: function(msgType, data){
-        console.log(msgType);
-        console.log(data);
-    }
+    recieve: recieveMessage
 };
 
 //Socket connection handling
@@ -38,5 +43,21 @@ socket.onmessage = function(payload){
 };
 socket.onopen = function(){
     console.log("Connecting to server");
-    game.send("init",{stage:0});
+    //Begin initialization phase by sending over client data
+    game.send("init1",config.client);
 };
+
+//Main code-- handle server events
+function recieveMessage(msgType, data){
+    console.log(msgType);
+    console.log(data);
+    switch(msgType){
+        case "init2":
+            config.client.teamNumber = data;
+            game.send("init3");
+            break;
+        default:
+            alert("ERROR: Recived unknown message type from server");
+            break;
+    }
+}

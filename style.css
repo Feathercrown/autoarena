@@ -18,15 +18,20 @@ body {
 #topPanel {
     width: 100%;
     height: 50%;
-    background-color: red;
+    background-color: rgb(65, 68, 82);
+}
+
+#canvas {
+    width:100%;
+    height:100%;
 }
 
 #bottomPanel {
     width: 100%;
     height: 50%;
-    background-color: yellow;
+    background-color: rgb(16, 167, 255);
     display: flex;
-    align-items: stretch;
+    align-items: stretch; //You can make a custom order (123 --> 132), they can reverse, they can go vertical, they can stretch and squash and squish and  f l e x,  and it's easy to change any of those properties for mobile/smolscreens and I believe they're all animateable as well
 }
 
 #bottomPanel > div {
@@ -38,8 +43,8 @@ body {
     font: 12px monospace, sans-serif;
     /*font-color: lawngreen;*/
     color: lawngreen;
-    border: 3px solid lawngreen;
-    background-color: green;
+    border: 0px solid black;
+    background-color: rgb(22, 24, 24);
     width: 100%;
     height: 100%;
     -webkit-box-sizing: border-box;

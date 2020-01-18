@@ -12,14 +12,15 @@
   <body>
     <div id="main" ng-app="app" ng-controller="controller">
       <div id="topPanel">
-          <canvas id="canvas" style="width:100%; height:100%;">Enable Javascript please!</canvas>
+          <canvas id="canvas">Enable Javascript please!</canvas>
       </div>
       <div id="bottomPanel">
           <div>
               <textarea id="code"></textarea>
           </div>
       </div>
-      <script src="./renderer.js"></script>
+      <script src="./client.js"></script>
+      <script src="./ttengine.js"></script>
     </div>
   </body>
 </html>
