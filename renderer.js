@@ -5,3 +5,31 @@
 // selectively enable features needed in the rendering
 // process.
 
+var config = {
+    serverUrl: "ws://localhost:80"
+};
+
+var cvs = document.getElementById("canvas");
+var ctx = cvs.getContext("2d");
+
+console.log("debug");
+
+var socket = new WebSocket(config.serverUrl);
+
+// Socket connection handling
+socket.onerror = function(){
+    alert("ERROR");
+};
+socket.onclose = function(){
+    alert("SOCKET CLOSED");
+};
+socket.onopen = function(){
+    console.log("Open");
+    socket.send('{"message":"test from client"}'); // TX
+};
+
+//Actual good stuff
+socket.onmessage = function(payload){ // RX
+    console.log("Message:\n");
+    console.log(payload);
+};

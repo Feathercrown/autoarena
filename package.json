@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "server": "node ws-server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/Feathercrown/autoarena#readme",
   "dependencies": {
-    "electron": "^7.1.9"
+    "electron": "^7.1.9",
+    "ws": "^7.2.1"
   }
 }
