@@ -1,0 +1,23 @@
+{
+  "name": "autoarena",
+  "version": "1.0.0",
+  "description": "Robot code time yay",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Feathercrown/autoarena.git"
+  },
+  "author": "Feathercrown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Feathercrown/autoarena/issues"
+  },
+  "homepage": "https://github.com/Feathercrown/autoarena#readme",
+  "dependencies": {
+    "electron": "^7.1.9"
+  }
+}
