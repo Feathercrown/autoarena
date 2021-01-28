@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Feathercrown/autoarena#readme",
   "dependencies": {
-    "electron": "^7.1.9",
+    "electron": "^9.4.0",
     "ws": "^7.2.1"
   }
 }
